@@ -1,0 +1,1 @@
+export const DEFAULT_TRAFFIC_THRESHOLD: number = 10;

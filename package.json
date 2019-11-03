@@ -1,0 +1,50 @@
+{
+  "name": "HTTP-log-monitoring",
+  "version": "0.0.0",
+  "description": "HTTP log monitoring",
+  "main": "dist/app.js",
+  "docker": {
+    "image": "dockertr.es.ad.adp.com/core/nodejs-buildtools:8"
+  },
+  "config": {
+    "port": 8080
+  },
+  "engines": {
+    "node": ">=8.9.1"
+  },
+  "scripts": {
+    "full-build": "npm run clean && npm run build",
+    "clean": "rm -rf dist",
+    "build": "npm run tslint-local && npm run compile",
+    "tslint-local": "tslint --project --config tslint.json --project --config tslint.jsontslint --project tsconfig.spec.json --config tslint.json --project tsconfig.spec.json --config tslint.json \"src/**/*.ts\"",
+    "compile": "tsc",
+    "unit-test": "istanbul cover _mocha -- \"spec/unit/**/*.ts\" --opts .mocha.local --timeout=5000",
+    "ut": "npm run unit-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "UPDATE WITH MY GIT REPO"
+  },
+  "author": "Darnel Clayton",
+  "dependencies": {
+    "@types/event-stream": "^3.3.34",
+    "event-stream": "^4.0.1",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "4.1.6",
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.10.53",
+    "@types/sinon": "^7.5.0",
+    "@types/sinon-chai": "^3.2.2",
+    "@types/yargs": "^13.0.3",
+    "chai": "^4.1.6",
+    "istanbul": "1.0.0-alpha.2",
+    "mocha": "^4.0.1",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.3.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.6.4"
+  }
+}
